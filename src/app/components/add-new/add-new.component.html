@@ -23,16 +23,18 @@
     </label>
     <input [(ngModel)]="songName" style="margin-top: 12px" type="text" placeholder="Liedname">
   </div>
- <select name="artists" id="artists">
-   <option disabled selected value="">Select Artist</option>
-   <option *ngFor="let artist of artists" value="{{artist.id}}">
-     {{artist.name}}
-   </option>
- </select>
+ <div style="display: flex; flex-direction: column; justify-content: space-between">
+   <select name="artists" id="artists">
+     <option disabled selected value="">Select Artist</option>
+     <option *ngFor="let artist of artists" value="{{artist.id}}">
+       {{artist.name}}
+     </option>
+   </select>
+   <button (click)="pushSong()">
+     Lied hochladen
+   </button>
+ </div>
 </div>
-<button (click)="pushSong()">
-  Lied hochladen
-</button>
 </body>
 <form action="http://localhost:8080/files/song/cover/{song_id}" method="post" enctype="multipart/form-data">
   <input style="display: none" type="file" id="profile-picker" class="select-button" accept="image/png, image/jpeg"

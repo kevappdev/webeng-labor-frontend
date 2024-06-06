@@ -69,6 +69,7 @@ export class LandingComponent {
     console.log(this.shownSongs);
   }
 
+  protected readonly isSecureContext = isSecureContext;
 }
 
 class Song {

@@ -11,6 +11,7 @@
 <div class="content-holder">
 <div class="song-view">
   <div class="view-image">
+    <img style="width: 100%; height: 100%; object-fit: cover" *ngIf="currentSong?.image" src="{{currentSong?.image}}">
   </div>
   <div class="name-row">
     <div style="display: flex; flex-direction: column; align-items: start; width: max-content; margin: 0">

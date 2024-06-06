@@ -48,7 +48,7 @@ export class AddNewComponent {
   }
 
 
-  pushSong() {
+  async pushSong() {
 
     var e = <HTMLSelectElement>document.getElementById("artists")!;
     var value = e.value;
@@ -65,7 +65,7 @@ export class AddNewComponent {
       }
     }).then(song => {
       let id = song.data?.id ?? "";
-
+      window.open("http://localhost:4200", "_self");
     });
 
   }
