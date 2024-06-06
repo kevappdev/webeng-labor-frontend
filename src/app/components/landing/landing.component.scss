@@ -1,0 +1,137 @@
+html {
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #282828;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, serif;
+}
+
+.content-holder {
+  display: flex;
+  width: 100%;
+  column-gap: 20px;
+  padding-right: 3vw;
+}
+
+
+.song-view {
+  flex: 3;
+  height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 5px 0 3px rgba(255, 255, 255, 0.21);
+
+
+  * {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.view-image {
+  width: 70%;
+  aspect-ratio: 1;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.51);
+}
+
+.name-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  box-sizing: border-box;
+  color: white;
+}
+
+.play-bar {
+  position: relative;
+  margin-top: 22px;
+  width: 80%;
+
+  #line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    inset: 0;
+    margin: auto 0;
+  }
+
+  #ball {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 0%;
+  }
+}
+
+.action-bar {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.song-list {
+  flex: 6;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 80px;
+  cursor: pointer;
+  overflow-y: scroll;
+}
+
+.search-bar {
+  top: 20px;
+  left: 0;
+  width: 50%;
+  background-color: white;
+  height: 34px;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 2px 8px;
+
+  }
+}
+
+
+.list-song {
+
+  display: flex;
+  align-items: start;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(96, 96, 96, 1);
+
+  &:first-of-type {
+    margin-top: 80px;
+    background-color: cornflowerblue;
+  }
+
+}
+

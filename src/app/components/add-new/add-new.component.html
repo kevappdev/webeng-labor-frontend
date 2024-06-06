@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Neu hinzufügen</title>
+</head>
+<body>
+<h2>Neues Lied hinzufügen</h2>
+<div class="content-holder">
+  <label for="profile-picker">
+    <div class="image-picker">
+      <img src="{{imgUrl}}">
+    </div>
+  </label>
+  <div>
+    <label for="audio-picker">
+      <div class="audio-picker">
+        <p>{{fileName ?? 'Lied auswählen'}}</p>
+      </div>
+    </label>
+    <input [(ngModel)]="songName" style="margin-top: 12px" type="text" placeholder="Liedname">
+  </div>
+ <select name="artists" id="artists">
+   <option disabled selected value="">Select Artist</option>
+   <option *ngFor="let artist of artists" value="{{artist.id}}">
+     {{artist.name}}
+   </option>
+ </select>
+</div>
+<button (click)="pushSong()">
+  Lied hochladen
+</button>
+</body>
+<form action="http://localhost:8080/files/song/cover/{song_id}" method="post" enctype="multipart/form-data">
+  <input style="display: none" type="file" id="profile-picker" class="select-button" accept="image/png, image/jpeg"
+         (change)="selectNewImage($event)" />
+  <button style="display: none;" id="submit-image" type="submit"></button>
+</form>
+<input style="display: none" type="file" id="audio-picker" class="select-button" accept="audio/*"
+       (change)="selectNewSong($event)" />
+</html>
